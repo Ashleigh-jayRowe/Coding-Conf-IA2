@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Coding Conf</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Coding Conf</h1>
+    </header>
+
+    <main>
+        <h2>Register for Coding Conf</h2>
+        <p>Enter your details to generate your ticket.</p>
+
+        <form id="registrationForm">
+        <div>
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required>
+            <small id="nameError"></small>
+        </div>
+
+
+        <div>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+            <small id="emailError"></small>
+        </div>
+
+        <div>
+            <label for="github">GitHub Username</label>
+            <span>@</span>
+            <input type="text" id="github" name="github" placeholder="username" required>
+            <small id="githubError"></small>
+        </div>
+
+        <div>
+            <label for="avatar">Upload Avatar (JPEG or PNG, under 500KB)</label>
+            <input type="file" id="avatar" name="avatar" accept=".jpg,.jpeg,.png" required>
+            <small id="avatarError"></small>
+        </div>
+
+        <button type="submit">Generate My Ticket</button>
+       
+
+        </form>
+   
+
+    </main>
+
+    <script src="../js/validation.js"></script>
+</body>
+</html>

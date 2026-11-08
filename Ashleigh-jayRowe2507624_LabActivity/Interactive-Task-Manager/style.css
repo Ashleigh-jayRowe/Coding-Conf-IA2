@@ -1,0 +1,203 @@
+/* Student: Ashleigh-jay Rowe | Student ID: 2507624
+   Module: CIT2011 | Assignment: Week 8 - Interactive Task Manager */
+
+:root {
+    --page: #f5f6fa;
+    --surface: #ffffff;
+    --ink: #20243a;
+    --muted: #777d91;
+    --line: #e8eaf1;
+    --accent: #6558c8;
+    --accent-dark: #5145ae;
+    --accent-soft: #efedff;
+    --green: #24845f;
+    --red: #c34f5b;
+    --shadow: 0 14px 40px rgba(34, 38, 67, 0.07);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--page);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+
+.app {
+    width: min(920px, calc(100% - 36px));
+    margin: 0 auto;
+    padding: 52px 0 28px;
+}
+
+.page-header, .task-toolbar, .section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.eyebrow {
+    margin: 0 0 7px;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin-bottom: 5px; font-size: clamp(2rem, 5vw, 2.7rem); letter-spacing: -0.04em; }
+h2 { margin-bottom: 0; font-size: 1.25rem; }
+.subtitle { margin-bottom: 0; color: var(--muted); }
+
+.date-card {
+    min-width: 125px;
+    padding: 14px 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+    text-align: center;
+}
+.date-label { display: block; color: var(--muted); font-size: 0.65rem; letter-spacing: 0.14em; }
+.date-card strong { display: block; margin-top: 3px; font-size: 0.95rem; }
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 30px 0 22px;
+}
+.summary-card, .panel, .task-section {
+    border: 1px solid var(--line);
+    border-radius: 17px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+.summary-card { padding: 18px 20px; }
+.summary-label { display: block; color: var(--muted); font-size: 0.82rem; }
+.summary-card strong { display: block; margin-top: 5px; font-size: 1.8rem; }
+
+.panel { padding: 23px 24px 18px; }
+.form-row { display: flex; align-items: end; gap: 12px; margin-top: 18px; }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.task-field { flex: 1; }
+.priority-field { width: 145px; }
+label { font-size: 0.8rem; font-weight: 700; }
+input, select {
+    width: 100%;
+    min-height: 45px;
+    padding: 0 12px;
+    border: 1px solid #dfe1eb;
+    border-radius: 9px;
+    outline: none;
+    background: #fff;
+    color: var(--ink);
+}
+input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.primary-button {
+    min-height: 45px;
+    padding: 0 19px;
+    border: 0;
+    border-radius: 9px;
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.2s;
+}
+.primary-button:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.form-message { min-height: 18px; margin: 8px 0 0; color: var(--red); font-size: 0.8rem; }
+
+.task-section { margin-top: 22px; padding: 23px 24px; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filter-button {
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+.filter-button:hover, .filter-button.active { background: var(--accent-soft); color: var(--accent-dark); }
+
+.task-list { display: grid; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+}
+.task-check {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 auto;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+.task-details { flex: 1; min-width: 0; }
+.task-title { display: block; overflow-wrap: anywhere; font-weight: 600; }
+.task-meta { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+.priority {
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 0.68rem;
+    font-weight: 700;
+}
+.priority-low { background: #eaf6f0; color: #287452; }
+.priority-medium { background: #fff4df; color: #96651b; }
+.priority-high { background: #fdebed; color: #b33f4c; }
+.completed .task-title { color: #999eac; text-decoration: line-through; }
+.task-actions { display: flex; gap: 6px; }
+.action-button {
+    padding: 7px 9px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: white;
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+.action-button:hover { border-color: var(--accent); color: var(--accent-dark); }
+.action-button.delete:hover { border-color: #f0c6ca; color: var(--red); }
+
+.empty-state { padding: 38px 12px 25px; text-align: center; }
+.empty-icon {
+    display: inline-grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+.empty-state h3 { margin-bottom: 4px; font-size: 1rem; }
+.empty-state p { margin-bottom: 0; color: var(--muted); font-size: 0.85rem; }
+footer { padding: 20px 0 0; color: var(--muted); text-align: center; font-size: 0.78rem; }
+
+@media (max-width: 650px) {
+    .app { padding-top: 30px; }
+    .summary { gap: 8px; }
+    .summary-card { padding: 14px 12px; }
+    .summary-card strong { font-size: 1.5rem; }
+    .form-row { flex-wrap: wrap; }
+    .task-field { flex-basis: 100%; }
+    .priority-field { flex: 1; width: auto; }
+    .primary-button { flex: 1; }
+    .task-toolbar { align-items: flex-start; flex-direction: column; }
+    .task-section, .panel { padding: 19px 16px; }
+}
+@media (max-width: 430px) {
+    .page-header { align-items: flex-start; }
+    .date-card { min-width: 95px; padding: 10px; }
+    .summary-label { font-size: 0.72rem; }
+    .task-item { align-items: flex-start; flex-wrap: wrap; }
+    .task-actions { width: 100%; padding-left: 31px; }
+}

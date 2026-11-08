@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Student: Ashleigh-jay Rowe | Student ID: 2507624
+         Module: CIT2011 | Assignment: Week 8 - Interactive Task Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="app">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">STAY FOCUSED</p>
+                <h1>Task Manager</h1>
+                <p class="subtitle">Plan your day, one task at a time.</p>
+            </div>
+            <div class="date-card">
+                <span class="date-label">TODAY</span>
+                <strong id="todayDate"></strong>
+            </div>
+        </header>
+
+        <section class="summary" aria-label="Task summary">
+            <article class="summary-card">
+                <span class="summary-label">Total tasks</span>
+                <strong id="totalCount">0</strong>
+            </article>
+            <article class="summary-card">
+                <span class="summary-label">To do</span>
+                <strong id="activeCount">0</strong>
+            </article>
+            <article class="summary-card">
+                <span class="summary-label">Completed</span>
+                <strong id="completedCount">0</strong>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">YOUR WORKSPACE</p>
+                    <h2 id="formHeading">Add a task</h2>
+                </div>
+            </div>
+
+            <form id="taskForm" novalidate>
+                <div class="form-row">
+                    <div class="field task-field">
+                        <label for="taskInput">Task description</label>
+                        <input type="text" id="taskInput" placeholder="e.g. Complete programming assignment" maxlength="100" required>
+                    </div>
+                    <div class="field priority-field">
+                        <label for="priorityInput">Priority</label>
+                        <select id="priorityInput">
+                            <option value="Low">Low</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="submitButton" class="primary-button">Add task</button>
+                </div>
+                <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="task-section">
+            <div class="task-toolbar">
+                <div>
+                    <p class="eyebrow">TASK LIST</p>
+                    <h2>Your tasks</h2>
+                </div>
+                <div class="filters" role="group" aria-label="Filter tasks">
+                    <button class="filter-button active" type="button" data-filter="all">All</button>
+                    <button class="filter-button" type="button" data-filter="active">To do</button>
+                    <button class="filter-button" type="button" data-filter="completed">Completed</button>
+                </div>
+            </div>
+            <ul id="taskList" class="task-list" aria-live="polite"></ul>
+            <div id="emptyState" class="empty-state">
+                <span class="empty-icon">✓</span>
+                <h3>No tasks here yet</h3>
+                <p>Add a task above and it will appear in this list.</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>Your tasks are saved in this browser automatically.</p>
+        </footer>
+    </main>
+</body>
+</html>

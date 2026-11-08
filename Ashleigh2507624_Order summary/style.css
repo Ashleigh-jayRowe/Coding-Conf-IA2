@@ -1,0 +1,195 @@
+/* Basic page setup */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(225, 100%, 94%);
+    background-image: url("images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+    color: hsl(223, 47%, 23%);
+    font-family: "Red Hat Display", Arial, sans-serif;
+}
+
+/* Order summary card */
+.order-card {
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 25px 45px hsla(224, 23%, 55%, 0.18);
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.order-content {
+    padding: 42px 48px 46px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 0 16px;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.description {
+    margin: 0 auto 24px;
+    color: hsl(224, 23%, 55%);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Subscription plan row */
+.plan {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 32px;
+    padding: 22px 20px;
+    border-radius: 12px;
+    background-color: hsl(225, 100%, 98%);
+    text-align: left;
+}
+
+.music-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.plan-details {
+    flex: 1;
+}
+
+.plan-details h2,
+.plan-details p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.plan-details h2 {
+    margin-bottom: 5px;
+    font-weight: 900;
+}
+
+.plan-details p {
+    color: hsl(224, 23%, 55%);
+}
+
+.change-link {
+    color: hsl(245, 75%, 52%);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.change-link:hover {
+    color: hsl(245, 83%, 68%);
+    text-decoration: none;
+}
+
+/* Action links */
+.payment-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 28px;
+    padding: 15px 20px;
+    border-radius: 11px;
+    background-color: hsl(245, 75%, 52%);
+    box-shadow: 0 16px 22px hsla(245, 75%, 52%, 0.22);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 900;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.payment-button:hover {
+    background-color: hsl(245, 83%, 68%);
+}
+
+.cancel-link {
+    color: hsl(224, 23%, 55%);
+    font-size: 15px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.cancel-link:hover {
+    color: hsl(223, 47%, 23%);
+}
+
+/* Keyboard accessibility */
+a:focus-visible {
+    outline: 3px solid hsl(245, 75%, 52%);
+    outline-offset: 4px;
+}
+
+/* Mobile layout */
+@media screen and (max-width: 500px) {
+    body {
+        padding: 24px;
+        background-image: url("images/pattern-background-mobile.svg");
+        background-size: 100% auto;
+    }
+
+    .order-card {
+        max-width: 400px;
+        border-radius: 18px;
+    }
+
+    .order-content {
+        padding: 32px 24px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .description {
+        margin-bottom: 24px;
+        font-size: 15px;
+    }
+
+    .plan {
+        gap: 14px;
+        padding: 17px 15px;
+    }
+
+    .music-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .plan-details h2,
+    .plan-details p {
+        font-size: 14px;
+    }
+
+    .change-link {
+        font-size: 13px;
+    }
+
+    .payment-button {
+        margin-bottom: 25px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .payment-button {
+        transition: none;
+    }
+}

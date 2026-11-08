@@ -1,0 +1,115 @@
+
+/* Element selector */
+body {
+    font-family: Arial, sans-serif;
+    color: #222222;
+    background-color:  #912006;
+    margin: 0;
+}
+
+/* Group selector */
+h1, h2 {
+    color: #ffc400;
+}
+
+/* Element selector */
+header {
+    background-color: #671d07;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Element selector */
+nav {
+    background-color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Descendant selector */
+nav a {
+    display: inline-block;
+    color: #671d07;
+    text-decoration: none;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 6px;
+}
+
+/* Pseudo-class selector */
+nav a:hover {
+    color: white;
+    background-color: #671d07;
+}
+
+/* Element selector */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Element selector */
+section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* Descendant selector */
+section p {
+    line-height: 1.6;
+}
+
+/* Attribute selector */
+a[href^="mailto"] {
+    color: #4a6fa5;
+}
+
+/* Element selector */
+img {
+    display: block;
+    max-width: 200px;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: 3px solid #4a6fa5;
+}
+
+/* Element selector */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4a6fa5;
+    color: white;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 20px;
+    }
+
+    main {
+        margin: 15px;
+        padding: 10px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    img {
+        max-width: 150px;
+    }
+}
